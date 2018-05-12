@@ -1,4 +1,4 @@
-package ar.edu.ub.testing.buscaminas;
+package ar.edu.ub.testing.buscaminas.modelo;
 
 public class Coordenada implements Comparable<Coordenada>{
 	

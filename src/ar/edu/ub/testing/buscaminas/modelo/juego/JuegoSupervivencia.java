@@ -1,6 +1,11 @@
-package ar.edu.ub.testing.buscaminas;
+package ar.edu.ub.testing.buscaminas.modelo.juego;
 
 import java.util.List;
+
+import ar.edu.ub.testing.buscaminas.modelo.Casilla;
+import ar.edu.ub.testing.buscaminas.modelo.Juego;
+import ar.edu.ub.testing.buscaminas.modelo.Jugador;
+import ar.edu.ub.testing.buscaminas.modelo.Tablero;
 
 public class JuegoSupervivencia extends Juego {
 

@@ -1,4 +1,4 @@
-package ar.edu.ub.testing.buscaminas;
+package ar.edu.ub.testing.buscaminas.modelo;
 
 import java.util.Set;
 import java.util.TreeSet;
