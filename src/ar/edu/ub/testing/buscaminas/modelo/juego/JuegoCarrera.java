@@ -11,30 +11,28 @@ public class JuegoCarrera extends Juego{
 
 	public JuegoCarrera( Consola consola, List<Jugador> jugadores) {
 		super(consola, jugadores);
-		// TODO Auto-generated constructor stub
 	}
 
 	@Override
 	public void casillaElegida(Casilla casilla) {
-		// TODO Auto-generated method stub
-		
+		// TODO Si piso una bomba, fuerza a cambiar el turno		
 	}
 
 	@Override
 	protected Tablero crearTablero() {
-		// TODO Auto-generated method stub
+		// TODO Solo puedo tener dos tipos de tableros
 		return null;
 	}
 
 	@Override
 	protected void cambiarTurno() {
-		// TODO Auto-generated method stub
+		// TODO Si el tipo eligio una bomba, me fuerzan a cambiar de turno
 		
 	}
 
 	@Override
 	protected boolean terminoJuego() {
-		// TODO Auto-generated method stub
+		// TODO el juego termina solo cuando algun jugador puede alcanzar el otro extremo
 		return false;
 	}
 
