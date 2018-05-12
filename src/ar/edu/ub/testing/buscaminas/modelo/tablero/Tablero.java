@@ -1,7 +1,9 @@
-package ar.edu.ub.testing.buscaminas.modelo;
+package ar.edu.ub.testing.buscaminas.modelo.tablero;
 
 import java.util.Set;
 import java.util.TreeSet;
+
+import ar.edu.ub.testing.util.Consola;
 
 public class Tablero {
 	
@@ -22,11 +24,11 @@ public class Tablero {
 		this.getEt().casillaElegida(this.getCasilla(coord));	
 	}
 	
-	public void imprimir(){	
+	public void imprimir(Consola consola){	
 		for(Casilla[] c  : this.getCasillas()  ){		
 			for(Casilla x :  c )
-				System.out.print(x);
-		System.out.println();
+				consola.print( x.toString() );
+		consola.println();
 		}
 	}
 
@@ -83,51 +85,15 @@ public class Tablero {
 		casilla.voltearBocaArriba();	
 		if( casillasMarcadas.add( casilla ) )
 		{
-			Coordenada coordenada = casilla.getCoordenada().add( new Coordenada(-1, -1) );
-			
-			if( this.isCoordenadaValida( coordenada ) )
-				this.mostrarBlancos( this.getCasilla( coordenada ), casillasMarcadas);
-			
-			coordenada = casilla.getCoordenada().add( new Coordenada(0, -1) );
-			
-			if( this.isCoordenadaValida( coordenada ) )
-				this.mostrarBlancos( this.getCasilla( coordenada ), casillasMarcadas);	
-			
-			
-			coordenada = casilla.getCoordenada().add( new Coordenada(1, -1) );
-			
-			if( this.isCoordenadaValida( coordenada ) )
-				this.mostrarBlancos( this.getCasilla( coordenada ), casillasMarcadas);			
-
-			//
-			
-			coordenada = casilla.getCoordenada().add( new Coordenada(-1, 0) );
-			
-			if( this.isCoordenadaValida( coordenada ) )
-				this.mostrarBlancos( this.getCasilla( coordenada ), casillasMarcadas);
-
-			coordenada = casilla.getCoordenada().add( new Coordenada(1, 0) );
-			
-			if( this.isCoordenadaValida( coordenada ) )
-				this.mostrarBlancos( this.getCasilla( coordenada ), casillasMarcadas);	
-			
-			//
-			
-			coordenada = casilla.getCoordenada().add( new Coordenada(-1, 1) );
-			
-			if( this.isCoordenadaValida( coordenada ) )
-				this.mostrarBlancos( this.getCasilla( coordenada ), casillasMarcadas);
-			
-			coordenada = casilla.getCoordenada().add( new Coordenada(0, 1) );
-			
-			if( this.isCoordenadaValida( coordenada ) )
-				this.mostrarBlancos( this.getCasilla( coordenada ), casillasMarcadas);	
-			
-			
-			coordenada = casilla.getCoordenada().add( new Coordenada(1, 1) );
-			
-			if( this.isCoordenadaValida( coordenada ) )
-				this.mostrarBlancos( this.getCasilla( coordenada ), casillasMarcadas);					
+			//busco en todas las casillas alrededor de mi blanco si existe otro blanco para mostrar
+			for( int fila = -1; fila < 2; fila++)
+				for( int columna = -1; columna < 2; columna++)			
+				{
+					Coordenada coordenada = casilla.getCoordenada().add( new Coordenada( fila, columna ) );
+					
+					if( this.isCoordenadaValida( coordenada ) )
+						this.mostrarBlancos( this.getCasilla( coordenada ), casillasMarcadas);				
+				}			
 		}		
 	}
 }

@@ -2,15 +2,15 @@ package ar.edu.ub.testing.buscaminas.modelo.juego;
 
 import java.util.List;
 
-import ar.edu.ub.testing.buscaminas.modelo.Casilla;
-import ar.edu.ub.testing.buscaminas.modelo.Juego;
 import ar.edu.ub.testing.buscaminas.modelo.Jugador;
-import ar.edu.ub.testing.buscaminas.modelo.Tablero;
+import ar.edu.ub.testing.buscaminas.modelo.tablero.Casilla;
+import ar.edu.ub.testing.buscaminas.modelo.tablero.Tablero;
+import ar.edu.ub.testing.util.Consola;
 
 public class JuegoCarrera extends Juego{
 
-	public JuegoCarrera(List<Jugador> jugadores) {
-		super(jugadores);
+	public JuegoCarrera( Consola consola, List<Jugador> jugadores) {
+		super(consola, jugadores);
 		// TODO Auto-generated constructor stub
 	}
 
@@ -27,7 +27,7 @@ public class JuegoCarrera extends Juego{
 	}
 
 	@Override
-	protected void cambiarturno() {
+	protected void cambiarTurno() {
 		// TODO Auto-generated method stub
 		
 	}

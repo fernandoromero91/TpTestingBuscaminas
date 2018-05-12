@@ -1,4 +1,4 @@
-package ar.edu.ub.testing.buscaminas.modelo;
+package ar.edu.ub.testing.buscaminas.modelo.tablero;
 
 public class Casilla implements Comparable<Casilla>{
 	

@@ -2,24 +2,26 @@ package ar.edu.ub.testing.buscaminas.modelo.juego;
 
 import java.util.List;
 
-import ar.edu.ub.testing.buscaminas.modelo.Casilla;
-import ar.edu.ub.testing.buscaminas.modelo.Juego;
 import ar.edu.ub.testing.buscaminas.modelo.Jugador;
-import ar.edu.ub.testing.buscaminas.modelo.Tablero;
+import ar.edu.ub.testing.buscaminas.modelo.tablero.Casilla;
+import ar.edu.ub.testing.buscaminas.modelo.tablero.Tablero;
+import ar.edu.ub.testing.util.Consola;
 
 public class JuegoConquista extends Juego {
 
-	public JuegoConquista(List<Jugador> jugadores) {
-		super(jugadores);
+	public JuegoConquista( Consola consola, List<Jugador> jugadores) {
+		super( consola, jugadores);
 	}
 
 	@Override
 	public void casillaElegida(Casilla casilla) {
+		
 		if(casilla.esUnaBomba()) 
 			this.getJugadorDeTurno().sumarCantidadBombas();
 		else if(casilla.esBlanco())
-			this.getT().mostrarBlancosContinuos(casilla);
-		System.out.println("Elegi la casilla " + casilla);
+			this.getTablero().mostrarBlancosContinuos(casilla);
+		
+		this.getConsola().println("Elegi la casilla " + casilla);
 	}
 
 	@Override
@@ -28,7 +30,7 @@ public class JuegoConquista extends Juego {
 	}
 
 	@Override
-	protected void cambiarturno() {
+	protected void cambiarTurno() {
 		if(this.getJugadorDeTurno() == null)
 			this.setJugadorDeTurno(this.getJugadores().get(0));
 	}
@@ -39,7 +41,7 @@ public class JuegoConquista extends Juego {
 	}
 
 	private int contarBombas() {
-		return this.getT().contarBombas();
+		return this.getTablero().contarBombas();
 	}
 
 
