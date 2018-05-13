@@ -36,7 +36,8 @@ public abstract class Juego implements EscuchadorTablero{
 	}
  
 	private Coordenada elegirCoordenada() {
-		
+		//TODO esto debe estar en un while mientras que la coordenada no sea valida
+		//TODO la validez la dan tanto el tablero ( dentro de los limites ) y el juego ( contiguas en el modo carrera)
 		this.getConsola().println( "Turno de: " + this.getJugadorDeTurno().getAlias() );
 		this.getTablero().imprimir( this.getConsola() );
 		

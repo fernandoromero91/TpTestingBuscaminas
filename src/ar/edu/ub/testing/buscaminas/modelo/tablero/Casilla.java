@@ -1,5 +1,7 @@
 package ar.edu.ub.testing.buscaminas.modelo.tablero;
 
+import ar.edu.ub.testing.buscaminas.modelo.Jugador;
+
 public class Casilla implements Comparable<Casilla>{
 	
 	enum EstadoCasilla{
@@ -31,12 +33,13 @@ public class Casilla implements Comparable<Casilla>{
 	private String 			dibujo;
 	private EstadoCasilla 	estado;
 	private Coordenada 		coordenada;
-	
+	private Jugador         jugadorEnLaCasilla;
 	public Casilla(String dibujo, int fila, int columna) {
 	
 		this.setDibujo(dibujo);
 		this.setEstado(EstadoCasilla.BOCA_ABAJO);
 		this.setCoordenada(new Coordenada(fila, columna));
+		this.setJugadorEnLaCasilla( null );
 	}
 	
 	public Casilla(int fila, int columna){
@@ -87,5 +90,17 @@ public class Casilla implements Comparable<Casilla>{
 	@Override
 	public int compareTo(Casilla o) {
 		return this.getCoordenada().compareTo( o.getCoordenada() );
+	}
+
+	public Jugador getJugadorEnLaCasilla() {
+		return jugadorEnLaCasilla;
+	}
+
+	public void setJugadorEnLaCasilla(Jugador jugadorEnLaCasilla) {
+		this.jugadorEnLaCasilla = jugadorEnLaCasilla;
+	}
+
+	public void voltearBocaAbajo() {
+		this.setEstado(EstadoCasilla.BOCA_ABAJO);		
 	}
 }
