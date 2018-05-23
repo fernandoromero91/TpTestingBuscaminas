@@ -20,7 +20,7 @@ public class Tablero {
 						{new Casilla ("*",2,0), new Casilla(2,1), new Casilla(2,2), new Casilla(2,3)},
 						{new Casilla (3,0), new Casilla(3,1), new Casilla(3,2), new Casilla(3,3)}});
 	}
-		
+	
 	// TODO este metodo es para tener un contructor diferente para mandar mis mapas
 	public Tablero(EscuchadorTablero et, String templateTablero ) {
 		this.setEscuchadorTablero(et);

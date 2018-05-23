@@ -26,7 +26,7 @@ public class JuegoSupervivencia extends Juego {
 
 	@Override
 	protected Tablero crearTablero() {
-		return new Tablero(this);
+		return new Tablero(this, "");
 	}
 
 	@Override
